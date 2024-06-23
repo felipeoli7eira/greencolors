@@ -1,0 +1,68 @@
+---
+import Logo from "./Logo.astro";
+import { Icon } from "astro-icon/components";
+
+interface Footer {}
+---
+
+<div class="gray-primary-bg">
+  <div class="container">
+    <footer class="row p-5 gray-primary-bg">
+      <div class="col col-12 col-md-4">
+        <Logo style="br" />
+      </div>
+
+      <div class="col col-12 col-md-4">
+        <h1 class="h3 fw-bold m-0 green-primary">Dúvidas?</h1>
+        <h3 class="h5 fw-300 green-primary">Fale com a gente.</h3>
+
+        <nav class="d-flex mt-5 flex-column align-items-start gap-1">
+          <a
+            target="_blank"
+            href="https://wa.me/send/5596991861617"
+            class="btn btn-success green-light-bg green-primary fw-300 border-0"
+          >
+            <Icon name="mdi:whatsapp" /> WahatsApp
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/tintasgreencolors"
+            class="btn btn-success green-light-bg green-primary fw-300 border-0"
+          >
+            <Icon name="mdi:instagram" /> Instagram
+          </a>
+
+          <a
+            href="https://wa.me/send/5596991861617"
+            target="_blank"
+            class="mt-5 btn fw-300 p-0 text-muted"
+          >
+            <Icon name="mdi:phone" /> +55 (96) 9 8186-1617</a
+          >
+        </nav>
+      </div>
+
+      <div class="col col-12 col-md-4 text-muted">
+        <p class="mb-5">
+          Endereço: Rua Maria da Conceição dos Santos, Novo Horizonte - Macapá -
+          AP CEP 68.909-807
+        </p>
+        <p class="">® Green Colors 2024 | Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<style>
+  footer div:nth-child(1),
+  footer div:nth-child(2) {
+    border-right: 2px solid #e0e0e0;
+  }
+
+  @media (max-width: 767px) {
+    footer div:nth-child(1),
+    footer div:nth-child(2) {
+      border: none !important;
+    }
+  }
+</style>
