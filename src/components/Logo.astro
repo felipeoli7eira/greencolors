@@ -1,19 +1,25 @@
 ---
-interface Logo {
-
-}
-
-const { style } = Astro.props
+const { style } = Astro.props;
 ---
 
-{style === 'br' && (
-    <img src="/img/svg/greencolors-br.svg" width="150" alt="logotipo greencolors">
-)}
+{
+  style === "br" && (
+    <img
+      src="/img/svg/greencolors-br.svg"
+      width="150"
+      alt="logotipo greencolors"
+    />
+  )
+}
 
-{!style && (
-    <img src="/img/svg/greencolors.svg" width="150" alt="logotipo greencolors">
-)}
+{
+  !style && (
+    <img
+      src="/img/svg/greencolors.svg"
+      width="150"
+      alt="logotipo greencolors"
+    />
+  )
+}
 
-<style>
-
-</style>
+<style></style>

@@ -1,0 +1,15 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { url } = Astro.props;
+---
+
+<nav class="d-flex align-items-center">
+  <a href={url} target="_blank" class="icon text-decoration-none">
+    <Icon size={47} color="#0e3221" name="mdi:linkedin" />
+  </a>
+
+  <a href={url} target="_blank" class="btn btn-green-second">
+    Visualizar perfil <Icon name="mdi:arrow-right-thin" />
+  </a>
+</nav>

@@ -1,8 +1,4 @@
 ---
-interface Props {
-  title: string;
-}
-
 const { title } = Astro.props;
 
 import "normalize.css/normalize.css";
@@ -15,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -24,9 +20,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
   </body>
 </html>
 
-<style is:global>
-  /* // <uniquifier>: Use a unique and descriptive class name */
-  /* // <weight>: Use a value from 100 to 800 */
+<style is:global lang="scss">
+  :root {
+    --green-primary: #0e3221;
+    --green-second: #00fc7e;
+    --green-second-hover: #16ec81;
+
+    --gray-primary: #f2f2f2;
+    --gray-second: #e0e0e0;
+  }
+
   @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
 
   * {
@@ -39,46 +42,78 @@ import "bootstrap/dist/css/bootstrap.min.css";
     font-weight: 100;
   }
 
-  /* me recomende de 100 a 800 */
   .fw-200 {
     font-weight: 200;
   }
+
   .fw-300 {
     font-weight: 300;
   }
+
   .fw-400 {
     font-weight: 400;
   }
+
   .fw-500 {
     font-weight: 500;
   }
+
   .fw-600 {
     font-weight: 600;
   }
+
   .fw-700 {
     font-weight: 700;
   }
+
   .fw-800 {
     font-weight: 800;
   }
 
+  // pallet
+
   .green-primary {
-    color: #0e3221;
+    color: var(--green-primary);
   }
 
   .green-primary-bg {
-    background-color: #0e3221;
+    background-color: var(--green-primary);
   }
 
-  .green-light {
-    color: #00fc7e;
+  .green-second {
+    color: var(--green-second);
   }
 
-  .green-light-bg {
-    background-color: #00fc7e;
+  .green-second-bg {
+    background-color: var(--green-second);
+  }
+
+  .gray-primary {
+    color: var(--gray-primary);
   }
 
   .gray-primary-bg {
-    background-color: #f2f2f2;
+    background-color: var(--gray-primary);
+  }
+
+  .btn-green-primary {
+  }
+
+  .btn-green-second {
+    background-color: var(--green-second);
+    color: var(--green-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    &:hover,
+    &:active {
+      background-color: var(--green-second-hover) !important;
+      border-color: var(--green-second) !important;
+    }
   }
 </style>
