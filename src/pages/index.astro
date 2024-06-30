@@ -1,22 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+
+import Header from "../components/Header/Header.astro";
+import TraditionalPaints from "../components/TraditionalPaints/TraditionalPaints.astro";
+import Solution from "../components/Solution/Solution.astro";
 import BusinessModel from "../components/BusinessModel/BusinessModel.astro";
+import Acceleration from "../components/Acceleration/Acceleration.astro";
 import Team from "../components/Team/Team.astro";
 import Footer from "../components/Footer/Footer.astro";
-import Acceleration from "../components/Acceleration/Acceleration.astro";
-import Solution from "../components/Solution/Solution.astro";
-import TraditionalPaints from "../components/TraditionalPaints/TraditionalPaints.astro";
 ---
 
 <Layout title="GreenColors">
-  <Header />
-  <TraditionalPaints />
-  <Solution />
-  <BusinessModel />
-  <Acceleration />
-  <Team />
-  <Footer />
+    <Header />
+    <TraditionalPaints />
+    <Solution />
+    <BusinessModel />
+    <Acceleration />
+    <Team />
+    <Footer />
 </Layout>
-
-<style lang="scss"></style>

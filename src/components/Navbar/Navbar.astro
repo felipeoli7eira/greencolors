@@ -1,0 +1,55 @@
+---
+import Brand from "../Brand/Brand.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<nav class="border-sky-800 flex flex-wrap justify-between p-4">
+    <Brand />
+
+    <button class="block md:hidden" id="button-toggle-menu">
+        <Icon size={22} name="mdi:hamburger-menu" />
+    </button>
+
+    <div class="menu flex-grow md:flex-grow-0 basis-full md:basis-auto flex flex-col md:flex-row justify-center items-center gap-5 md:gap-12 text-bluegray font-normal">
+        <a href="#about-section" class="hover:text-gray-200 transition duration-100 ease-in">Sobre</a>
+        <a href="#ecotinta-section" class="hover:text-gray-200 transition duration-100 ease-in">Ecotintas</a>
+        <a href="#team-section" class="hover:text-gray-200 transition duration-100 ease-in">Equipe</a>
+        <a href="https://wa.me/559691861617" target="_blank" class="flex items-center gap-2 bg-secondary p-4 rounded-md text-primary font-medium hover:bg-green-500 transition">
+            <Icon size={22} name="mdi:whatsapp" /> <span>Fale conosco</span>
+        </a>
+    </div>
+</nav>
+
+<style lang="scss">
+    .menu {
+        height: 0;
+        overflow: hidden;
+        padding: 0 !important;
+
+        &.is-visible {
+            height: fit-content;
+            padding: 1rem !important;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .menu {
+            width: fit-content !important;
+            height: auto;
+        }
+    }
+</style>
+
+<script>
+    document
+        .querySelector("#button-toggle-menu")
+        ?.addEventListener("click", (e) => {
+            document.querySelector(".menu")?.classList.toggle("is-visible");
+        });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth <= 768) {
+            document.querySelector(".menu")?.classList.remove("is-visible");
+        }
+    });
+</script>

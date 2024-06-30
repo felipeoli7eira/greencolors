@@ -1,78 +1,62 @@
 ---
-import Logo from "../Logo.astro";
-
 import { Icon } from "astro-icon/components";
-
-interface Footer {}
+import Brand from "../Brand/Brand.astro";
 ---
 
-<footer class="gray-primary-bg p-1 p-md-5">
-  <div class="container p-5">
-    <div class="row">
-      <div class="col col-12 col-md-4 'text-center">
-        <Logo style="br" />
-      </div>
+<footer class="p-16 bg-gray-500">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:w-10/12 mx-auto">
+        <div class="col-brand">
+            <Brand style="br" />
+        </div>
 
-      <div class="col col-12 col-md-4 mt-4 mt-md-0 position-relative">
-        <h1 class="h3 fw-bold m-0 green-primary">Dúvidas?</h1>
-        <h3 class="h5 fw-300 green-primary">Fale com a gente.</h3>
+        <div class="flex flex-col items-start col-contacts relative">
+            <p class="text-primary font-bold text-3xl">Dúvidas?</p>
+            <p class="text-primary font-normal text-lg mb-5">Fale com a gente.</p>
 
-        <nav class="d-flex mt-5 flex-column align-items-start gap-1">
-          <a
-            target="_blank"
-            href="https://wa.me/send/5596991861617"
-            class="btn btn-green-second fw-300"
-          >
-            <Icon size={20} name="mdi:whatsapp" /> WhatsApp
-          </a>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/tintasgreencolors"
-            class="btn btn-green-second fw-300 mt-2"
-          >
-            <Icon size={20} name="mdi:instagram" /> Instagram
-          </a>
+            <a href="https://wa.me/559691861617" target="_blank" class="flex items-center gap-2 bg-secondary p-4 mb-5 rounded-md text-primary font-medium hover:bg-green-500 transition">
+                <Icon size={22} name="mdi:whatsapp" /> <span>WhatsApp</span>
+            </a>
 
-          <a
-            href="https://wa.me/send/5596991861617"
-            target="_blank"
-            class="btn fw-400 mt-3 text-muted p-0"
-          >
-            <Icon size={20} name="mdi:phone" /> +55 (96) 9 8186-1617</a
-          >
-        </nav>
-      </div>
 
-      <div class="col col-12 col-md-4 text-muted mt-4 mt-md-0 position-relative">
-        <p class="m-0 mb-5">Endereço: Rua Maria da Conceição dos Santos, Novo Horizonte - Macapá - AP CEP: 68.909-807</p>
-        <p class="">®Green Colors 2024 | Todos os direitos reservados.</p>
-      </div>
+            <a href="https://wa.me/559691861617" target="_blank" class="flex items-center gap-2 bg-secondary p-4 mb-5 rounded-md text-primary font-medium hover:bg-green-500 transition">
+                <Icon size={22} name="mdi:instagram" /> <span>Instagram</span>
+            </a>
+
+            <a href="https://wa.me/send/5596991861617" target="_blank" class="flex gap-2 text-gray-200 text-sm">
+                <Icon size={20} name="mdi:phone" />
+                <span>+55 (96) 9 8186-1617</span>
+            </a>
+        </div>
+
+        <div class="col-address relative">
+            <p class="font-normal text-sm mb-5 text-gray-200">Endereço: Rua Maria da Conceição dos Santos, Novo Horizonte - Macapá - AP CEP: 68.909-807</p>
+            <p class="font-normal text-sm mb-5 text-gray-200">®Green Colors 2024 | Todos os direitos reservados.</p>
+        </div>
     </div>
-  </div>
 </footer>
 
-<style lang="scss">
-  .col:nth-child(2)::before,
-  .col:nth-child(3)::before {
-    content: '';
-    position: absolute;
-    left: -100px;
-    background-color: var(--gray-second);
-    width: 2px;
-  }
-
-  .col:nth-child(2)::before {
-    height: 100%;
-  }
-
-  .col:nth-child(3)::before {
-    height: 50%;
-  }
-
-  @media (max-width: 1200px) {
-    .col:nth-child(2)::before,
-    .col:nth-child(3)::before {
-      display: none;
+<style>
+    .col-contacts::before,
+    .col-address::before {
+        content: "";
+        position: absolute;
+        left: -100px;
+        background-color: var(--gray-4);
+        width: 2px;
     }
-  }
+
+    .col-contacts::before {
+        height: 100%;
+    }
+
+    .col-address::before {
+        height: 50%;
+    }
+
+    @media (max-width: 1200px) {
+        .col-contacts::before,
+        .col-address::before {
+            display: none;
+        }
+    }
 </style>

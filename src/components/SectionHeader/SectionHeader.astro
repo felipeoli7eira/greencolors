@@ -1,0 +1,60 @@
+---
+interface Props {
+    title: string;
+    subtitle?: string;
+    color?: string;
+    pipeColor?: string;
+}
+
+const { title, subtitle, color = 'primary' } = Astro.props
+---
+
+<div class="lg:w-11/12 mx-auto flex items-center justify-center md:justify-start gap-3 md:gap-5 mb-12">
+    <p class={"text-3xl whitespace-nowrap font-bold ".concat(color)}>{title}</p>
+    {
+        subtitle && (<p>
+            <div class={"pipe ".concat(color)}></div>
+            <span class={"whitespace-nowrap font-normal text-lg subtitle ".concat(color)}>{subtitle}</span>
+        </p>)
+    }
+    <div class={"w-full line hidden md:block ".concat(color)}></div>
+</div>
+
+<style lang="scss">
+    .pipe {
+        min-width: 3px;
+        max-width: 3px;
+        border-radius: 10px;
+        height: 20px;
+        margin-right: 0.8rem;
+
+        &.green-primary {
+            background-color: var(--green-primary);
+        }
+
+        &.green-secondary {
+            background-color: var(--green-secondary);
+        }
+
+        &.gray-2 {
+            background-color: var(--gray-2) !important;
+        }
+    }
+
+    .line {
+        border-top-width: 1px;
+        border-style: solid;
+
+        &.green-primary {
+            border-color: var(--green-primary);
+        }
+
+        &.green-secondary {
+            border-color: var(--green-secondary);
+        }
+
+        &.gray-2 {
+            border-color: var(--gray-2) !important;
+        }
+    }
+</style>

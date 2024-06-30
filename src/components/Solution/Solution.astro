@@ -1,4 +1,6 @@
 ---
+import SectionHeader from "../SectionHeader/SectionHeader.astro";
+
 const listItems: string[] = [
     "Tinta mais acessivel",
     "Pigmentos naturais",
@@ -7,58 +9,29 @@ const listItems: string[] = [
 ];
 ---
 
-<section id="ecotinta-section" class="solution-section container-fluid green-deep-bg py-5 mb-5">
-    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-4 px-5">
-        <h4 class="h4 fw-700 m-0 green-second">Solução</h4>
-        <div class="pipe"></div>
-        <h4 class="h4 fw-300 m-0 green-second">Ecotinta</h4>
-        <div class="border justify-self-end flex-grow-1 d-none d-md-inline-block line"></div>
-    </div>
+<section id="solution" class="p-16 bg-primary">
+    <SectionHeader title="Solução" subtitle="Ecotinta" color="green-secondary" />
 
-    <div class="container">
-        <div class="row">
-            <div class="col col-12 col-md-6">
-                <img src="/img/solution/tinta.png" class="d-inline-block w-100" alt="Lata de tinta GreenColors" />
-            </div>
+    <div class="grid lg:grid-cols-2 lg:w-9/12 mx-auto">
+        <div class="">
+            <img src="/img/solution/tinta.png" class="" alt="lara de tinta da GreenColors" />
+        </div>
 
-            <div class="col col-12 col-md-6 d-flex flex-column justify-content-center align-items-start pt-5">
-                <h1 class="h1 fw-800 text-white mb-4 mt-5 pt-2">ECOTINTA</h1>
+        <div class="pt-32 flex flex-col gap-7 items-start">
+            <h1 class="text-white text-4xl font-bold uppercase m-0">Ecotinta</h1>
 
-                <div class="rounded-pill p-2 border px-4 mb-5">
-                    <p class="m-0 green-second">Tinta segura e amiga da natureza.</p>
-                </div>
+            <span class="text-secondary border-secondary border py-1 text-sm font-light- px-6 rounded-full">Tinta segura e amiga da natureza.</span>
 
-                <div class="d-flex flex-column gap-4">
+            <div class="flex flex-col gap-4">
                 {
-                    listItems.map((item: string) => (
-                    <div class="d-flex align-items-center">
-                        <img src="/img/solution/arrow-right-list.svg" width="20" />
-                        <span class="d-inline-block h4 h4-responsive text-white fw-200 ms-4">{item}</span>
-                    </div>
+                    listItems.map((text: string) => (
+                        <p class="m-0 flex gap-3 items-center">
+                            <span class="text-4xl text-secondary">➜</span>
+                            <span class="text-white text-base md:text-2xl">{text}</span>
+                        </p>
                     ))
                 }
-                </div>
             </div>
         </div>
     </div>
 </section>
-
-<style lang="scss">
-    .pipe {
-        height: 20px;
-        width: 3px;
-        background-color: var(--green-second);
-    }
-
-    .line {
-        border-color: var(--green-second) !important;
-    }
-
-    .rounded-pill {
-        border-color: var(--green-second) !important;
-    }
-
-    ul li {
-        list-style-image: url("/img/solution/arrow-right-list.svg");
-    }
-</style>

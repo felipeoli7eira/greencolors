@@ -1,4 +1,6 @@
 ---
+import SectionHeader from "../SectionHeader/SectionHeader.astro"
+
 const sectionElements: string[] = [
     'Tinta sustentáveis podem custar até 3X mais que <br/> uma tinta comum.',
     'Muitos ainda utilizam <b>pigmentos tóxicos com <br/> metais pesados</b> que contaminam o solo e a água.',
@@ -8,78 +10,25 @@ const sectionElements: string[] = [
 ]
 ---
 
-<section id="about-section" class="traditional-paints container-fluid position-relative py-5">
-    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-4 px-5 mb-5">
-        <h4 class="h4 fw-700 m-0 text-second">Tintas Tradicionais</h4>
-        <div class="border flex-grow-1 d-none d-md-inline-block"></div>
-    </div>
+<section id="about-section" class="bg-gray-600 p-16 relative">
+    <SectionHeader title="Tintas tradicionais" color="gray-2" />
 
-    <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-start gap-5">
-        <div class="d-flex flex-md-column gap-4 justify-content-center justify-content-md-between">
-            <img src="/img/traditional-paints/game-icons-poison-bottle.svg" width="90" />
-            <img src="/img/traditional-paints/dollar.svg"                   width="90" />
-            <img src="/img/traditional-paints/skull-up.svg"                 width="90" />
+    <div class="flex flex-col gap-4 lg:flex-row gap-x-16 w-12/12 lg:w-9/12 mx-auto">
+        <div class="flex lg:flex-col justify-center lg:justify-start lg:gap-10 w-100">
+            <img src="/img/traditional-paints/dollar.svg" width="100" />
+            <img src="/img/traditional-paints/skull.svg" width="100" />
+            <img src="/img/traditional-paints/skull-chart.svg" width="100" />
         </div>
 
-        <div class="d-flex flex-column gap-4 section-items">
+        <div class="flex flex-col gap-3 lg:gap-5">
             {sectionElements.map((item, index) => (
-                <div class="d-flex gap-3">
-                    <span class="d-flex justify-content-center align-items-center text-white fw-500 rounded-circle fs-4">{index + 1}</span>
-                    <p set:html={item} class="gray-section m-0 h5 fw-400 pt-2"></p>
+                <div class="flex gap-4">
+                    <span class="bg-gray-100 text-white min-w-14 min-h-14 max-w-14 max-h-14 font-black flex items-center justify-center rounded-full">{index + 1}</span>
+                    <p set:html={item} class="font-normal mt-3"></p>
                 </div>
             ))}
         </div>
-
-        <img src="/img/traditional-paints/cientista.svg" class="img-experiment" />
     </div>
+
+    <img src="/img/traditional-paints/scientist.svg" width="500" class="hidden xl:block absolute bottom-0 right-0" />
 </section>
-
-<style lang="scss">
-
-.traditional-paints {
-    background-color: #F2F2F2;
-
-    h4 {
-        color: #4F4F4F;
-    }
-
-    .section-items div span {
-        background-color: #333333;
-        width: 50px;
-        height: 50px;
-    }
-
-    img.img-experiment {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-
-    .gray-section {
-        color: #333333;
-    }
-}
-
-@media (max-width: 1200px) {
-    img.img-experiment {
-        display: none;
-    }
-}
-
-@media (max-width: 767px) {
-    .section-items div {
-        span {
-            font-size: 1rem !important;
-            min-width: 50px !important;
-            min-height: 50px !important;
-
-            max-width: 50px !important;
-            max-height: 50px !important;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-    }
-}
-</style>

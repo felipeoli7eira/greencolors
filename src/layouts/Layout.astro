@@ -2,131 +2,64 @@
 const { title } = Astro.props;
 
 import "normalize.css/normalize.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 ---
 
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <slot />
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Tintas biodegradáveis e livre de metais pesados"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-slate-100">
+        <main>
+            <slot />
+        </main>
+    </body>
 </html>
 
 <style is:global lang="scss">
-  html {
-    scroll-behavior: smooth !important;
-  }
-
-  :root {
-    --green-primary: #0e3221;
-    --green-second: #00fc7e;
-    --green-second-hover: #16ec81;
-    --green-deep: #0e3221;
-
-    --gray-primary: #f2f2f2;
-    --gray-second: #e0e0e0;
-  }
-
-  @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
-
-  * {
-    font-family: "Sora", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-  }
-
-  .fw-100 {
-    font-weight: 100;
-  }
-
-  .fw-200 {
-    font-weight: 200;
-  }
-
-  .fw-300 {
-    font-weight: 300;
-  }
-
-  .fw-400 {
-    font-weight: 400;
-  }
-
-  .fw-500 {
-    font-weight: 500;
-  }
-
-  .fw-600 {
-    font-weight: 600;
-  }
-
-  .fw-700 {
-    font-weight: 700;
-  }
-
-  .fw-800 {
-    font-weight: 800;
-  }
-
-  // pallet
-
-  .green-deep {
-    color: var(--green-deep);
-  }
-
-  .green-deep-bg {
-    background-color: var(--green-deep);
-  }
-
-  .green-primary {
-    color: var(--green-primary);
-  }
-
-  .green-primary-bg {
-    background-color: var(--green-primary);
-  }
-
-  .green-second {
-    color: var(--green-second);
-  }
-
-  .green-second-bg {
-    background-color: var(--green-second);
-  }
-
-  .gray-primary {
-    color: var(--gray-primary);
-  }
-
-  .gray-primary-bg {
-    background-color: var(--gray-primary);
-  }
-
-  .btn-green-primary {
-  }
-
-  .btn-green-second {
-    background-color: var(--green-second);
-    color: var(--green-primary);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-
-    &:hover,
-    &:active {
-      background-color: var(--green-second-hover) !important;
-      border-color: var(--green-second) !important;
+    html {
+        scroll-behavior: smooth !important;
     }
-  }
+
+    :root {
+        --green-primary: #0e3221;
+        --green-secondary: #00fc7e;
+
+        --gray-2: #4F4F4F;
+        --gray-4: #cccccc;
+        --gray-5: #E0E0E0;
+    }
+
+    .green-primary {
+        color: var(--green-primary);
+    }
+
+    .green-secondary {
+        color: var(--green-secondary);
+    }
+
+    .gray-2 {
+        color: var(--gray-2);
+    }
+
+    .gray-5 {
+        color: var(--gray-5);
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+    * {
+        font-family: "Sora", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
 </style>

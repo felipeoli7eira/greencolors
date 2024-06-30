@@ -1,27 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
+import SectionHeader from "../SectionHeader/SectionHeader.astro";
 ---
 
-<section class="my-5 container-fluid">
-  <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-4 px-5 mb-5">
-    <h4 class="h4 fw-700 m-0">Aceleração 2024</h4>
+<section id="acceleration" class="p-8 lg:p-16">
+    <div class="w-11/12 mx-auto flex items-center gap-5 mb-12">
+        <p class="text-3xl whitespace-nowrap font-bold flex items-center gap-5 text-primary">
+            <span>Aceleração 2024</span>
+            <Icon size={50} name="mdi:rocket" color="#E0E0E0" />
+        </p>
 
-    <h4 class="h4 fw-300 m-0">
-      <Icon name="mdi:rocket-launch" color='#E0E0E0' size={45} />
-    </h4>
+        <div class="w-full line"></div>
+    </div>
 
-    <div class="border justify-self-end flex-grow-1 line d-none d-md-inline-block"></div>
-  </div>
-
-  <div class="gray-primary-bg container rounded p-4 d-flex align-items-center justify-content-around flex-wrap gap-5">
-    <img src="/img/acceleration/ideacao.png" alt="Inova Amazônia Ideação">
-    <img src="/img/acceleration/tracao.png" alt="Inova Amazônia Tração">
-    <img src="/img/acceleration/inovativa.png" alt="Inovativa de Impacto">
-    <img src="/img/acceleration/senai.png" alt="HUB 2024 de inovação senai sesi - programa startup indústria amapá">
-  </div>
+    <div class="bg-gray-500 rounded flex flex-col lg:flex-row justify-center gap-12 items-center p-5 shadow-md">
+        <img src="/img/acceleration/ideacao.png"   alt="Inova Amazônia Ideação" />
+        <img src="/img/acceleration/tracao.png"    alt="Inova Amazônia Tração" />
+        <img src="/img/acceleration/inovativa.png" alt="Inovativa de Impacto" />
+        <img src="/img/acceleration/senai.png"     alt="HUB 2024 de inovação senai sesi - programa startup indústria amapá" />
+    </div>
 </section>
 
-<style lang="scss">
-  @media (max-width: 1200px) {
-  }
+<style>
+    .line {
+        border-top-width: 1px;
+        border-style: solid;
+        border-color: var(--gray-2) !important;
+    }
 </style>
